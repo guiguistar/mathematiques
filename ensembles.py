@@ -26,8 +26,8 @@ def produit(*ensembles):
         return produit_cartesien(produit(*ensembles), dernier)
 
 if __name__ == '__main__':
-    A = rendre_iterable(ensemble(1,2,3))
-    B = rendre_iterable(ensemble(1,20,30))
+    A = ensemble(1,2,3)
+    B = ensemble(1,20,30)
     C = ensemble('a','b','c')
     D = ensemble("ti", "to")
     
