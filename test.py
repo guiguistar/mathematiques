@@ -13,3 +13,4 @@ if __name__ == '__main__':
     print(P(e))
     print(a,b,c)
     print(a*(b*c))
+    print(P(P(P(Ensemble()))))
