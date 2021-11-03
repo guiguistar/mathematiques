@@ -35,7 +35,6 @@ class Ensemble(frozenset):
                 if (1 << j) & i:
                     p_.append(liste[j])
             p.append(Ensemble(*p_))
-        print(p)
         return Ensemble(*p)
     def parties_rec(self):
         if len(self) == 0:
@@ -72,36 +71,4 @@ def produit(*ensembles):
         return produit_cartesien(produit(*ensembles), dernier)
 
 Card = len
-    
-if __name__ == '__main__':
-    A = ensemble(1,2,3)
-    B = ensemble(1,20,30)
-    C = ensemble('a','b','c')
-    D = ensemble("ti", "to")
-    
-    print(A,B,C)
-    
-    #x = produit_cartesien
-    #print(x(A,x(B,C)))
-    
-    #print(*produit(A,B,C,D),sep='\n')
-
-    a = Ensemble(4,2,45,42)
-    b = Ensemble('a','b')
-    c = Ensemble(a,b)
-    d = Ensemble(4,3)
-    e = Ensemble(Ensemble('a'), Ensemble(42))
-    print(a, b, c, d, a.intersection(d), a.union(b), Ensemble(a))
-    print(a.parties())
-    print(a^b)
-    print(Card(a))
-    print(a*b)
-    print(adjonction(c,'Toto'))
-    print(Ensemble().union(Ensemble(2)))
-    print(Ensemble("Toto").parties_rec())
-    print(e.parties_rec())
-    print(adjonction(Ensemble(), 'a'))
-    print(adjonction(e,'b'))
-    print(Ensemble('a', 'b').parties_rec())
-    print(Ensemble().parties_rec().parties_rec().parties_rec())
-    print(Card(Ensemble().parties_rec().parties_rec().parties_rec()))
+P = lambda e : Ensemble.parties(e)

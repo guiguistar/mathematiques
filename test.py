@@ -1,0 +1,15 @@
+# coding: utf-8
+
+from ensembles.ensembles import *
+
+if __name__ == '__main__':
+    a = Ensemble(4,2,45,42)
+    b = Ensemble('a','b')
+    c = Ensemble(a,b)
+    d = Ensemble(4,3)
+    e = Ensemble(Ensemble('a'), Ensemble(42))
+
+    print(e)
+    print(P(e))
+    print(a,b,c)
+    print(a*(b*c))
