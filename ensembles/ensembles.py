@@ -37,6 +37,7 @@ class Ensemble(frozenset):
             p.append(Ensemble(*p_))
         return Ensemble(*p)
     def parties_rec(self):
+        # Implémentation récursive de la fonction parties
         if len(self) == 0:
             return Ensemble(self)
         parties = Ensemble()
@@ -46,8 +47,8 @@ class Ensemble(frozenset):
             parties = parties | partie_avec_a | partie_sans_a
         return parties
     
-# (X = {X_1, ..., X_n}, a) -> { X_1 U {a}, ..., X_n U {a} }
 def adjonction(X, a):
+    # (X = {X_1, ..., X_n}, a) -> { X_1 U {a}, ..., X_n U {a} }
     return Ensemble(*map(lambda ens : ens|Ensemble(a), X))
 
 Card = len
