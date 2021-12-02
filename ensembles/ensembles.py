@@ -47,7 +47,7 @@ class Ensemble(frozenset):
             parties = parties | partie_avec_a | partie_sans_a
         return parties
     
-def adjonction(X, a):
+def adjonction(X : Ensemble, a ) -> Ensemble:
     # (X = {X_1, ..., X_n}, a) -> { X_1 U {a}, ..., X_n U {a} }
     return Ensemble(*map(lambda ens : ens|Ensemble(a), X))
 
